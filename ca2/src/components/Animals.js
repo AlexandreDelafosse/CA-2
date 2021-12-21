@@ -1,4 +1,4 @@
-//component to view all dogs
+//component to view all animals
 
 import React from "react";
 import {Link} from 'react-router-dom';
@@ -34,21 +34,21 @@ class Animals extends React.Component{
 
     render(){
         if(!this.state.isLoaded){
-            return(
+                return(
+                    <div>
+                    Loading... {console.log(this.state)}
+                    </div>
+                )
+            }else{
+            return (
                 <div>
-                   Loading... {console.log(this.state)}
+                        {console.log(this.setState({isLoaded:true}) )}
                 </div>
             )
-        }else{
-        return (
-            <div>
-                    {console.log(this.setState({isLoaded:true}) )}
-            </div>
-        )
-    }
+        }
 
     }
-    }
+}
     
 
 export default Animals;
