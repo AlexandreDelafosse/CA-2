@@ -118,7 +118,7 @@ app.delete('/animals/:id', (req, res) => {
 // Connection to the mongo DB
 app.listen(port, () => {
 
-  mongoose.connect('mongodb+srv://skanderz:Angelemavie1/@animalsapi.yvsql.mongodb.net/AnimalsAPI?retryWrites=true&w=majority').
+  mongoose.connect('mongodb+srv://skanderz:Angelemavie1@animalsapi.yvsql.mongodb.net/AnimalsAPI?retryWrites=true&w=majority').
   catch(error => console.log(error));
   console.log(`Example app listening at http://localhost:${port}`)
 })

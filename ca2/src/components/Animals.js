@@ -15,20 +15,18 @@ class Animals extends React.Component{
     }
 
     componentDidMount(){
-        axios.get('/animals')
-        .then(function (response) {
+        fetch("/animals")
+        .then(res => res.json())
+        .then(
+            (result) => {
+                console.log(result);
+                this.setState({
+                    isLoaded: true,
+                    animals: result,
+                });
+            },
+        )
 
-            console.log(response.data)
-
-            this.setState( {
-                animals : response.data,
-                 isLoaded: true
-            })
-        })
-        .catch(function (error) {
-
-            console.log(error);
-        })
 
     }
 
